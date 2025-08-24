@@ -76,6 +76,12 @@
       color: #aaa;
     }
   </style>
+<script>
+  window.onload = () => {
+    const token = Math.random().toString(36).slice(2,10);
+    location.href = "/d/" + token; // schöner, individueller Pfad
+  };
+</script>
 </head>
 <body>
   <h1>Join the Crypto Insider Newsletter</h1>
