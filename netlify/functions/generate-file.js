@@ -4,7 +4,7 @@ exports.handler = async (event) => {
 
   // Zielgröße: zufällig zwischen 4 MB und 12 MB
   const minSize = 4 * 1024 * 1024;
-  const maxSize = 12 * 1024 * 1024;
+  const maxSize = 6 * 1024 * 1024 - 10000; // etwas Sicherheitsabstand
   const totalSize = Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize;
 
   // Dummy-Zeile und Anzahl berechnen
