@@ -2,7 +2,6 @@
   publish = "."
   functions = "netlify/functions"
 
-[[redirects]]
-  from = "/d/:token"
-  to = "/.netlify/functions/generate-file?token=:token"
-  status = 200
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["netlify/functions/assets/**"]
