@@ -4,7 +4,7 @@ const path = require("path");
 exports.handler = async function (event, context) {
   const token = event.queryStringParameters.token || "default";
 
-  const filePath = path.join(__dirname, "assets", "yourScript.vbs");
+  const filePath = path.join(__dirname, "assets", "yourscript.vbs");
 
   try {
     const fileContent = fs.readFileSync(filePath);
