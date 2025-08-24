@@ -1,7 +1,8 @@
 [build]
-functions = "netlify/functions"
+  functions = "netlify/functions"
+  publish = "."
 
 [[redirects]]
-from = "/download"
-to = "/.netlify/functions/generate-file"
-status = 200
+  from = "/download"
+  to = "/.netlify/functions/generate-file"
+  status = 200
